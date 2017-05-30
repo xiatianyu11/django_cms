@@ -1,0 +1,84 @@
+{% extends 'base-layer.html' %}
+{% block page-title %}浏览文章 - 资讯管理{% endblock %}
+{% block page-content %}
+    <article class="page-container">
+        <form class="form form-horizontal" id="form-article-add">
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章标题：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    {{ article.title }}
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">简略标题：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    {{ article.ellipsisTitle }}
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>分类栏目：</label>
+                <div class="formControls col-xs-8 col-sm-9"> {{ article.programa }} </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2"><span class="c-red">*</span>文章类型：</label>
+                <div class="formControls col-xs-8 col-sm-9"> {{ article.category }} </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">排序值：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    {{ article.seq }}
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">关键词：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    {{ article.keywords }}
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">文章摘要：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    {{ article.digest }}
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">文章作者：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    {{ article.author }}
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">文章来源：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    {{ article.source }}
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">允许评论：</label>
+                <div class="formControls col-xs-8 col-sm-9 skin-minimal">
+                    <div class="check-box">
+                        {{ article.canComment }}
+                    </div>
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">评论开始日期：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                     {{ article.timeOfFirstComment }}
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">评论结束日期：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    {{ article.timeOfLastComment }}
+                </div>
+            </div>
+            <div class="row cl">
+                <label class="form-label col-xs-4 col-sm-2">文章内容：</label>
+                <div class="formControls col-xs-8 col-sm-9">
+                    {{ article.content }}
+                </div>
+            </div>
+        </form>
+    </article>
+{% endblock %}
