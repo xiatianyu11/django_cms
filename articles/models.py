@@ -8,8 +8,16 @@ from django.utils import  timezone
 # Create your models here.
 class Article(models.Model):
     title = models.CharField(max_length=200)
+    ellipsisTitle = models.CharField(max_length=200)
     category = models.CharField(max_length=50)
+    order = models.IntegerField(default=0)
+    keywords = models.CharField(max_length=200)
+    digest = models.CharField(max_length=500)
+    author = models.CharField(max_length=50)
     source = models.CharField(max_length=200)
+    canComment = models.BooleanField(default=False)
+    timeOfFirstComment = models.DateTimeField()
+    timeOfLastComment = models.DateTimeField()
     updateTime = models.DateTimeField()
     readCount = models.IntegerField(default=0)
     state = models.CharField(max_length=1)
