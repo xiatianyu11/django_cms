@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django import  forms
+from .widgets import DocContentInput
 
 
 marcas = (
@@ -18,6 +19,6 @@ class ArticleForm(forms.Form):
     author = forms.CharField(widget=forms.TextInput(attrs={'class' : 'input-text'}))
     source = forms.CharField(widget=forms.TextInput(attrs={'class': 'input-text'}))
     canComment = forms.BooleanField(widget=forms.CheckboxInput(attrs={'id' : 'checkbox-pinglun'}))
-    timeOfFirstComment = forms.CharField(widget=forms.TextInput(attrs={"onfocus" : "WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\'datemax\')||\'%y-%M-%d\'}'})", "id" : "datemin", "class" : "input-text Wdate"}))
-    timeOfLastComment = forms.CharField(widget=forms.TextInput(attrs={"onfocus": "WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\'datemin\')}'})", "id": "datemax", "class": "input-text Wdate"}))
-    content = forms.CharField(widget=forms.Textarea(attrs={'class': 'textarea', 'placeholder': '说点什么...最少输入10个字符'}))
+    timeOfFirstComment = forms.CharField(widget=forms.TextInput(attrs={"onfocus" : "WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',maxDate:'#F{$dp.$D(\\'datemax\\')||\\'%y-%M-%d\\'}'})", "id" : "datemin", "class" : "input-text Wdate"}))
+    timeOfLastComment = forms.CharField(widget=forms.TextInput(attrs={"onfocus": "WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss',minDate:'#F{$dp.$D(\\'datemin\\')}'})", "id": "datemax", "class": "input-text Wdate"}))
+    content = forms.CharField(widget=DocContentInput(attrs={"id":"editor", "style":"..."}))

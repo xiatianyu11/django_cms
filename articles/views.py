@@ -19,7 +19,7 @@ def add(request):
 		if form.is_valid():
 			return render(request, 'success.html')
 		else:
-			return render(request, 'fail.html')
+			return render(request, 'fail.html', {'form' : form})
 	else:
 		form = ArticleForm()
 		return render(request, 'articles/edit.html', {'form' : form})
